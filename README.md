@@ -22,3 +22,9 @@ docker-compose exec php php artisan migrate
 http://localhost:8080
 
 # ２回目以降のdockerコンテナ起動
+
+# Fortify パッケージをインストール
+
+docker-compose exec php composer require laravel/fortify
+docker-compose exec php php artisan fortify:install
+docker-compose exec php php artisan migrate
